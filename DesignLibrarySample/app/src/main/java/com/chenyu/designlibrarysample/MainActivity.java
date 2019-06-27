@@ -8,7 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.mipmap.ic_drawer_home);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "我点击了左边", Toast.LENGTH_SHORT).show();
+
+            }
+        });
         collapsingToolbarLayout.setTitle("DesignLibrarySample");
         collapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
         collapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);
@@ -35,24 +44,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_notifications) {
-            Log.d("cylog","click menu");
-            return true;
+        switch (item.getItemId()){
+            case R.id.menu_1:
+                Toast.makeText(this, "我是第一个", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menu_2:
+                Toast.makeText(this, "我是第二个", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menu_3:
+                Toast.makeText(this, "我是第三个", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.menu_4:
+                Toast.makeText(this, "我是第四个", Toast.LENGTH_SHORT).show();
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }

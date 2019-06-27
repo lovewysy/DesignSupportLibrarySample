@@ -1,11 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_notifications"
-        android:title="Notifications"
-        android:icon="@mipmap/ic_notifications"
-        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu_1"
+        android:orderInCategory="80"
+        android:title="我是第一个"
+        app:showAsAction="never" />
 
+    <item
+        android:id="@+id/menu_2"
+        android:orderInCategory="80"
+        android:title="我是第二个"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_3"
+        android:orderInCategory="80"
+        android:title="我是第三个"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_4"
+        android:orderInCategory="80"
+        android:title="我是第四个"
+        app:showAsAction="never" />
 </menu>
